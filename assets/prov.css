@@ -1,0 +1,128 @@
+/* ---------- происхождение утверждения ----------
+   Три типа: проверенное, гипотеза, собственный вывод.
+   Кодирование визуальное и не подписывается словами: тип различают
+   форма вертикальной линии и иконка над ней. Линия не замыкается
+   сверху и снизу — это отметка на полях, а не рамка.
+   Класс называется prov, а не src: .src в этой системе уже занят
+   подписью источника. */
+.prov{position:relative;padding-left:58px;margin:var(--space-md) 0}
+.prov::before{
+  content:"";position:absolute;left:26px;top:4px;bottom:4px;
+  border-left:2.5px solid var(--prov-line);
+}
+.prov > .ic{position:absolute;left:0;top:0;width:22px;height:22px;color:var(--prov-ic)}
+.prov > .ic svg{width:100%;height:100%;display:block}
+.prov > :last-child{margin-bottom:0}
+.prov .tw,.prov .note{margin-left:0}
+
+:root{--prov-line:#D2D2DA;--prov-ic:#C0C0C9;--prov-mine:#F0C9B4}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--prov-line:#33333B;--prov-ic:#3E3E47;--prov-mine:#5A3620}
+}
+:root[data-theme="dark"]{--prov-line:#33333B;--prov-ic:#3E3E47;--prov-mine:#5A3620}
+
+/* проверенное — сплошная */
+.prov.fact::before{border-left-style:solid}
+/* гипотеза — пунктир: опора прерывистая */
+.prov.hyp::before{border-left-style:dashed}
+/* собственный вывод — сплошная с лёгким янтарным оттенком */
+.prov.mine::before{border-left-style:solid;border-left-color:var(--prov-mine)}
+.prov.mine > .ic{color:var(--prov-mine)}
+
+@media (max-width:640px){
+  .prov{padding-left:40px}
+  .prov::before{left:18px}
+  .prov > .ic{width:19px;height:19px}
+}
+
+/* Пятый тип — «переделать». Сильнее «доработать»: не «дописать», а «сделать заново».
+   Единственное место, где красный стоит не на состоянии продукта, а на рабочей пометке, —
+   и это оправдано тем, что тип временный и обязан исчезнуть до сдачи. */
+.prov.redo::before{border-left-style:dashed;border-left-color:var(--signal-ink)}
+.prov.redo > .ic{color:var(--signal-ink)}
+.provleg .redo .ln{border-left-style:dashed;border-left-color:var(--signal-ink)}
+.provleg .redo .ic{color:var(--signal-ink)}
+
+/* Четвёртый тип — «доработать». Отвечает не на вопрос «откуда это»,
+   а на вопрос «что с этим ещё нужно сделать», поэтому и выглядит иначе:
+   пунктир янтарным, чтобы место работы было видно при пролистывании.
+   Тип временный: в сданной версии таких пометок остаться не должно. */
+.prov.todo::before{border-left-style:dashed;border-left-color:var(--prov-mine)}
+.prov.todo > .ic{color:var(--prov-mine)}
+.provleg .todo .ln{border-left-style:dashed;border-left-color:var(--prov-mine)}
+.provleg .todo .ic{color:var(--prov-mine)}
+
+/* «Удалить» — блок под снос. Только в модуле 02. */
+.prov.del::before{border-left-style:solid;border-left-color:var(--ink-3)}
+.prov.del > .ic{color:var(--ink-3)}
+.provleg .del .ln{border-left-style:solid;border-left-color:var(--ink-3)}
+.provleg .del .ic{color:var(--ink-3)}
+
+/* Широкий блок — таблица, сетка карточек, схема. Рейка уходит в поле слева
+   и ширины блока не трогает: иначе таблица разъезжается с заголовком секции,
+   а карточная сетка на 1280 теряет колонку. Поля хватает: .wrap — 1120 px,
+   на экране 1280 слева свободно 106 px, рейке с иконкой нужно 58. */
+.prov.edge{padding-left:0}
+.prov.edge::before{left:-32px}
+.prov.edge > .ic{left:-58px}
+
+/* У блока со своей подложкой рейка тоже уходит в поле, но собственное поле
+   блока обязано остаться: иначе текст упирается в белый край карточки, а
+   справа и сверху поле есть — выходит перекос. Прозрачных .col это не
+   касается, они по-прежнему встают по колонке страницы. */
+.card.prov.edge,.quote.prov.edge,.bars2.prov.edge,.flywheel.prov.edge,
+.map.prov.edge,.check.prov.edge,.note.prov.edge,.devcard.prov.edge{padding-left:var(--space-lg)}
+.stmt.prov.edge{padding-left:var(--space-xl)}
+.diagram.prov.edge{padding-left:var(--space-md-lg)}
+.stage.prov.edge{padding-left:22px}
+@media (max-width:1180px){
+  .prov.edge{padding-left:58px}
+  .card.prov.edge,.quote.prov.edge,.bars2.prov.edge,.flywheel.prov.edge,
+  .map.prov.edge,.check.prov.edge,.note.prov.edge,.devcard.prov.edge{padding-left:58px}
+  .stmt.prov.edge,.diagram.prov.edge,.stage.prov.edge{padding-left:58px}
+  .prov.edge::before{left:26px}
+  .prov.edge > .ic{left:0}
+}
+@media (max-width:640px){
+  .prov.edge{padding-left:40px}
+  .card.prov.edge,.quote.prov.edge,.bars2.prov.edge,.flywheel.prov.edge,
+  .map.prov.edge,.check.prov.edge,.note.prov.edge,.devcard.prov.edge{padding-left:40px}
+  .stmt.prov.edge,.diagram.prov.edge,.stage.prov.edge{padding-left:40px}
+  .prov.edge::before{left:18px}
+}
+
+/* легенда пометок */
+.provleg{display:flex;flex-wrap:wrap;gap:var(--space-md) var(--space-xl);margin:var(--space-lg) 0 0}
+.provleg > div{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2)}
+.provleg .ic{width:22px;height:22px;color:var(--prov-ic);flex:none}
+.provleg .ic svg{width:100%;height:100%;display:block}
+.provleg .mine .ic{color:var(--prov-mine)}
+/* образец линии в легенде — кодирование должно быть видно, а не описано */
+.provleg .ln{width:0;height:22px;border-left:2.5px solid var(--prov-line);flex:none;margin-left:-2px}
+.provleg .hyp .ln{border-left-style:dashed}
+.provleg .mine .ln{border-left-color:var(--prov-mine)}
+
+/* Пометка ставится и на элементы, у которых уже была своя левая полоса
+   (.ev в списке рычагов, .tip в шагах). Своя полоса убирается: рейка
+   происхождения занимает то же место и значит больше.
+   !important здесь оправдан — эти правила живут в <style> самих модулей
+   и иначе перебивают общий слой. */
+.prov.ev, .prov.tip, .prov.why{
+  border-left:0 !important;
+  padding-left:58px !important;
+}
+@media (max-width:640px){
+  .prov.ev, .prov.tip, .prov.why{padding-left:40px !important}
+}
+
+/* Заметка — уже плашка, вторая рейка рядом с ней читалась бы как рамка.
+   Поэтому у заметок кодированной становится сама левая кромка плашки,
+   а иконка встаёт в строку с тегом. */
+.note.prov{padding-left:calc(var(--space-lg) + 6px)}
+.note.prov::before{left:0;top:0;bottom:0;border-left-width:4px;border-radius:var(--r-lg) 0 0 var(--r-lg)}
+.note.prov > .ic{
+  position:static;display:inline-block;vertical-align:-5px;
+  width:19px;height:19px;margin-right:7px;
+}
+.note.prov > .ic + .tg{display:inline}
+.note.prov > .ic + .tg + p{margin-top:var(--space-xs)}

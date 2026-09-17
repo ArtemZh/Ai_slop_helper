@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Проєктний менеджмент 2026</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="assets/prov.css">
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <b>PM 2026</b>
+  <span class="sp"></span>
+  <button class="pill">Огляд</button>
+  <button class="pill solid">Тренди</button>
+</div></div>
+
+<div class="wrap">
+
+  <div class="howto">
+    <p class="kicker">Як цим користуватися</p>
+    <ol>
+      <li><b>Асистент пише текст</b> і сам ставить початкові помітки: що взяв із джерела, що вигадав, що дали ви.</li>
+      <li><b>Ви проходите сторінку.</b> Клік по іконці зліва від блока перебирає типи по колу. Праворуч біля кожного блока стоїть «+» — там лишаєте зауваження, і воно там же й лишається видимим.</li>
+      <li><b>Кажете «опрацюй зауваження».</b> Асистент читає ваші коментарі разом із робочими помітками і править текст.</li>
+      <li><b>Мета проходу</b> — щоб на сторінці не лишилося жодного «Переробити · ai slop»: кожен блок або підкріплений джерелом, або переписаний вами, або знесений.</li>
+    </ol>
+  </div>
+
+  <div class="provleg">
+    <div class="fact"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>Перевірено</div>
+    <div class="hyp"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="13" r="8.5" stroke-dasharray="3 3.4"/><path d="M13 9.4v4.2"/><path d="M13 17.1h.01"/></svg></span>Гіпотеза</div>
+    <div class="mine"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 4.5v17"/><path d="M5.5 13h9"/><path d="M11 8.5l4 4.5-4 4.5"/><path d="M18.5 13h2.5"/></svg></span>Мій висновок</div>
+    <div class="todo"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 4.8l3.7 3.7L9.6 20.2l-4.6.9.9-4.6z"/><path d="M15.2 7.1l3.7 3.7"/></svg></span>Доробити</div>
+    <div class="redo"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>Переробити · ai slop</div>
+    <div class="del"><span class="ln"></span><span class="ic"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h15"/><path d="M10 8V5.5h6V8"/><path d="M7.5 8l1 12.5h9L18.5 8"/><path d="M11 11.5v6M15 11.5v6"/></svg></span>Видалити</div>
+  </div>
+
+  <p class="kicker">Розбір · серпень 2026</p>
+  <h1>Куди йде управління проєктами.</h1>
+
+  <p class="prov redo lead" data-prov="01-1-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>Шість зрушень, які до 2026 року перестали бути прогнозом і стали щоденною роботою менеджера. І окремо — те, про що менше говорять: як разом із ними змінюється питання, за що саме менеджер відповідає.</p>
+
+
+  <div class="prov redo txt" data-prov="01-1-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+    <p>Кожен рік хтось публікує список трендів, і кожного разу половина пунктів виявляється тим самим пунктом, переписаним іншими словами. Тому почну не зі списку, а з розрізнення. Є зрушення, які змінюють інструменти: з’являється нова кнопка, ви вчитеся її натискати, і за півроку вже не пам’ятаєте, як було раніше. І є зрушення, які змінюють питання, на які менеджер зобов’язаний мати відповідь. Перші коштують тижня навчання. Другі переписують те, за що з вас спитають.</p>
+    <p>2026 рік цікавий тим, що обидва типи зійшлися на одній темі. AI зайшов у проєктну роботу спочатку як інструмент — підготувати протокол, зібрати статус, накидати структуру робіт. А потім, майже непомітно, поставив питання, якого в цій професії раніше не було: якщо частину роботи виконує не людина, хто відповідає за результат цієї роботи. І це вже не питання про інструмент.</p>
+    <p>Далі — шість напрямів на схемі, чотири стадії, якими команди проходять цей перехід, і три розбори з матеріалів PMI, де ця сама відповідальність розкладена на конкретні механізми: матрицю ролей, структуру робіт і межу, за якою рішення лишається за людиною.</p>
+  </div>
+
+  <!-- ============ радар ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема перша</p>
+    <h2>Що тисне найсильніше.</h2>
+
+    <div class="prov redo txt" data-prov="01-2-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <p>Шість напрямів розкладені на двох осях. По горизонталі — наскільки зрушення вже настало: ліворуч те, що вже стало щоденністю і не питає вашої згоди, праворуч те, що ще формується і про що поки говорять на конференціях. По вертикалі — наскільки сильно воно міняє саму роботу менеджера, а не просто набір інструментів у нього на столі.</p>
+      <p>Розділення тут не академічне. Права нижня чверть — це те, що можна відкласти й повернутися за рік. Ліва верхня — те, з чим ви вже маєте справу, навіть якщо ще не назвали це вголос. Більшість дискусій про тренди плутають ці дві чверті й через це закінчуються нічим.</p>
+    </div>
+
+    <div class="prov redo card radar edge" data-prov="01-2-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <svg viewBox="0 0 420 420" aria-label="Радар трендів">
+        <circle class="ring" cx="210" cy="210" r="60"/>
+        <circle class="ring" cx="210" cy="210" r="115"/>
+        <circle class="ring" cx="210" cy="210" r="170"/>
+        <line class="axis" x1="210" y1="30" x2="210" y2="390"/>
+        <line class="axis" x1="30" y1="210" x2="390" y2="210"/>
+        <text class="lbl" x="14" y="210" transform="rotate(-90 14 210)">ВЖЕ НАСТАЛО</text>
+        <text class="lbl" x="406" y="210" transform="rotate(90 406 210)">ЩЕ ФОРМУЄТЬСЯ</text>
+        <text class="lbl" x="210" y="18">СИЛЬНО ЗМІНЮЄ РОБОТУ</text>
+        <text class="lbl" x="210" y="412">МАЙЖЕ НЕ ЗМІНЮЄ</text>
+        <text class="quad" x="48" y="46">з цим працюють уже зараз</text>
+        <text class="quad r" x="372" y="46">до цього готуються</text>
+        <text class="quad" x="48" y="382">уже звикли, роботи не додає</text>
+        <text class="quad r" x="372" y="382">можна відкласти на рік</text>
+        <g id="dots"></g>
+      </svg>
+      <div>
+        <div class="rcats" id="rcats"></div>
+        <div class="rpanel" id="rpanel"></div>
+      </div>
+    </div>
+
+    <div class="prov redo txt" data-prov="01-2-3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <p>Найцікавіше на цій схемі — не сама AI-точка, а те, що зібралося навколо неї. Оплата за результат замість оплати за години перетворює оцінку з прогнозу на зобов’язання: якщо ви помилилися в оцінці, це більше не «ми не вгадали», а недовиконаний контракт. Гібридні команди прибирають синхронну нараду як опору процесу — коли пів команди в іншому поясі, а частина зайде на два місяці як підрядники, статус доводиться збирати інакше. Навички замість посад ламають штатний розклад як опис реальності.</p>
+      <p>Жодне з цих зрушень не потребує AI, щоб статися. Але кожне з них робить ручний збір інформації дорожчим — і саме тому вони приїхали разом.</p>
+    </div>
+  </section>
+
+  <!-- ============ стадії ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема друга</p>
+    <h2>Чотири стадії зрілості.</h2>
+
+    <div class="prov redo txt" data-prov="01-3-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <p>Команди не переходять до AI-асистованого управління одним стрибком. Між «ми спробували» і «без цього не працюємо» лежать чотири стадії, і вони не про кількість ліцензій, а про те, що змінилося в роботі.</p>
+      <p>Застрягають майже всі на другій. Виглядає це так: рутина справді пішла в автоматику, протоколи й статуси більше не набираються руками, час звільнився — і на цьому все зупинилося. Звільнений час не потрапив у план, оцінки лишилися такими самими, наради проходять так само. Формально впровадження відбулося. Фактично не змінилося нічого, крім того, що менше друкують.</p>
+      <p>Перехід на третю стадію коштує дорожче, ніж будь-яке впровадження, бо вимагає змінити не інструмент, а звичку: рахувати строк по завершених проєктах, а не по відчуттю, і перевіряти цифру, а не приймати її, бо її видала система.</p>
+    </div>
+
+    <div class="prov redo card stage edge" data-prov="01-3-2" id="stage"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <div class="track"><span class="bar"></span></div>
+      <div class="steps" id="steps"></div>
+      <div class="spanel" id="spanel"></div>
+    </div>
+
+    <div data-prov="01-3-3" class="prov todo"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 4.8l3.7 3.7L9.6 20.2l-4.6.9.9-4.6z"/><path d="M15.2 7.1l3.7 3.7"/></svg></span>
+      <table>
+        <tr><th>Стадія</th><th>Що вимірюють</th><th>Типова пастка</th></tr>
+        <tr><td>Спроби</td><td>Кількість інструментів</td><td>Пілот заради пілота</td></tr>
+        <tr><td>Опора</td><td>Час на рутину</td><td>Економія не доходить до плану</td></tr>
+        <tr><td>Процес</td><td>Точність оцінок</td><td>Довіра до цифри без перевірки</td></tr>
+        <tr><td>Норма</td><td>Передбачуваність постачання</td><td>Втрата навички без інструмента</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ PMI: RACI ============ -->
+  <section class="sec">
+    <p class="eyebrow">Розбір · PMI</p>
+    <h2>Хто відповідає, коли частину роботи робить агент. <a class="ref" href="#src-1">1</a></h2>
+
+    <div class="prov fact txt" data-prov="01-4-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Наприкінці липня PMI опублікував розбір того, що стається з матрицею RACI, коли частина виконавців — не люди. Матрицю цю вміє накидати з пам’яті будь-який менеджер: Responsible, Accountable, Consulted, Informed, і головне правило — рівно один Accountable на результат. Сітка ніколи не була складною частиною. Складне починається на живому проєкті, де пріоритети зсуваються, а люди почуваються викинутими тієї ж хвилини, коли їх не покликали в рішення, яке їм важливе.</p>
+      <p>Питання «хто чим володіє» стає гострішим, коли частина команди не людина. AI вже присутній у проєктній роботі буденно: зводить наради, пише чернетки статусів, розбирає ризики, шукає теми у відгуках зацікавлених сторін. Дедалі частіше агенти беруть на себе й обмежені шматки процесу цілком. Принципи роботи із зацікавленими сторонами при цьому не змінюються — змінюється те, як їх застосовувати.</p>
+    </div>
+
+    <div class="prov fact card edge" data-prov="01-4-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <h3>Три питання, яких раніше не було</h3>
+      <ul class="qa">
+        <li><b>Хто вичитує згенероване?</b><span>Чернетка статусу чи протокол — усе одно чийсь текст, і хтось відповідає за те, що в ньому написано.</span></li>
+        <li><b>Хто затверджує дію?</b><span>Агент може підготувати рішення, але натиснути має той, кого потім спитають.</span></li>
+        <li><b>Хто власник ескалації?</b><span>Якщо процес із AI дав хибний результат, ім’я в графі Accountable має бути одне — це правило не зсунулося.</span></li>
+      </ul>
+    </div>
+
+    <div class="prov fact txt" data-prov="01-4-3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Найближчий зсув PMI називає не автономною доставкою, а augmented intelligence: AI не заміщує людину, а допомагає їй робити свою роботу краще. Готує швидше, помічає патерни раніше, комунікує рівніше — але контекст, судження, розуміння зацікавлених сторін і фінальна відповідальність лишаються за менеджером.</p>
+      <p>Окремо там є теза, яка не про AI взагалі, але пояснює, чому вся ця розмова про ролі не бюрократія. З дослідження PMI про успіх проєкту: проєкт може влучити в кожен строк і лишитися в бюджеті — і все одно вважатиметься провалом, якщо ті, чия думка важить, не побачили в ньому цінності. Ролі, відносини й ясність щодо того, хто чим володіє, входять до цієї оцінки нарівні зі строком.</p>
+    </div>
+
+    <div class="prov fact note" data-prov="01-4-4"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <span class="tg">Що з цього застосовне вже завтра</span>
+      <p>Якщо на графу Accountable претендують дві функції — або обидві від неї ухиляються — акуратніша сітка не допоможе. Це рішення, яке зазвичай має ухвалити спонсор. Змусьте цю розмову статися заздалегідь, поки її не змусив статися інцидент.</p>
+    </div>
+  </section>
+
+  <!-- ============ PMI: WBS ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема третя · PMI</p>
+    <h2>Що додається до плану робіт. <a class="ref" href="#src-2">2</a></h2>
+
+    <div class="prov fact txt" data-prov="01-5-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Найдорожча робота на проєкті — та, якої ніхто не запланував. Вона з’являється пізно і як несподіванка: інтеграція, що не була нічиєю задачею, крок перевірки, який кожен вважав чужим, результат, що провалився в щілину між двома командами. Коли вона нарешті виринає, полагодити її коштує в рази більше, ніж коштувало б передбачити.</p>
+      <p>Структура робіт існує рівно для того, щоб ловити таку роботу рано. Накидати її сьогодні — питання секунд: шаблон у трекері або AI, який зробить перший підхід із короткого брифу, поки ви не допили каву. Складне лишилося іншим: вирішити, що входить у проєкт, а що ні, і де закінчується один шматок роботи й починається наступний. Та сама дисципліна тепер відповідає й на нове питання — що саме агент робитиме, а чого не робитиме.</p>
+    </div>
+
+    <div class="prov fact card wbs edge" data-prov="01-5-2" id="wbs"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <div class="sw" id="wbsSw">
+        <button data-i="0">Звичайна фіча</button>
+        <button data-i="1">Агентний процес</button>
+      </div>
+      <p class="cnt" id="wbsCnt"></p>
+      <div class="tree" id="wbsTree"></div>
+      <p class="rule" id="wbsRule"></p>
+    </div>
+
+    <div class="prov fact txt" data-prov="01-5-3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Приклад у розборі побутовий: помічник, який пише чернетки відповідей на звернення клієнтів. Зібраний як звичайна функція продукту, він дає очікувану структуру — вимоги, розробка, тестування, впровадження, управління. Зібраний як агентний процес, він лишає всі ці гілки й додає п’ять нових, і додає їх не технологія, а делегована свобода дій.</p>
+      <p>Принцип при цьому не змінюється. Структура так само описує результати, а не активності, і так само діє правило 100%: усе, що в межах проєкту, і нічого зайвого. Розширюється не форма, а зміст — у неї входить поведінка агента і система контролю навколо нього.</p>
+    </div>
+
+    <div class="prov fact note" data-prov="01-5-4"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <span class="tg">Стара формула, яка знову працює</span>
+      <p>Якщо цього немає в структурі робіт — цього немає в проєкті. Роботу, якої в структурі не знайти, треба спочатку затвердити, а вже потім робити. Двадцять років ця фраза була про захист від розповзання обсягу. Тепер вона ж описує межу повноважень агента.</p>
+    </div>
+  </section>
+
+  <!-- ============ PMI: human-in-the-loop ============ -->
+  <section class="sec">
+    <p class="eyebrow">Розбір · PMI</p>
+    <h2>Автоматизація, асистування, аугментація. <a class="ref" href="#src-3">3</a></h2>
+
+    <div class="prov fact txt" data-prov="01-6-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Питання «де саме потрібна людина» зазвичай вирішують інтуїтивно й тому щоразу наново. PMI пропонує розкладати його на два виміри. Перший — складність задачі: скільки в ній змінних, чи потрібен бізнес-контекст, чи потрібен власне досвід управління проєктами. Другий — скільки доводиться втручатися людині, щоб отримати придатний результат. Залежність пряма: чим складніша задача, тим більше втручання, і саме на цьому полі видно, який режим роботи ви насправді обрали.</p>
+    </div>
+
+    <div class="prov fact card hitl edge" data-prov="01-6-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <svg viewBox="0 0 380 300" aria-label="Складність задачі і потрібне втручання людини">
+        <rect class="zn" x="40" y="200" width="105" height="70" rx="10" fill="#0071E3"/>
+        <rect class="zn" x="145" y="130" width="105" height="140" rx="10" fill="#7D3CE0"/>
+        <rect class="zn" x="250" y="30" width="105" height="240" rx="10" fill="#C7442E"/>
+        <text class="zl" x="92" y="240" text-anchor="middle">Автоматизація</text>
+        <text class="zl" x="197" y="205" text-anchor="middle">Асистування</text>
+        <text class="zl" x="302" y="160" text-anchor="middle">Аугментація</text>
+        <line class="ln" x1="40" y1="270" x2="360" y2="270"/>
+        <line class="ln" x1="40" y1="20" x2="40" y2="270"/>
+        <text class="ax" x="40" y="288">СКЛАДНІСТЬ ЗАДАЧІ →</text>
+        <text class="ax" x="30" y="20" transform="rotate(-90 30 20)">ВТРУЧАННЯ ЛЮДИНИ →</text>
+      </svg>
+      <ul class="zdesc">
+        <li><i style="background:#0071E3"></i><span><b>Автоматизація</b>Задача проста й повторювана. Людина задає правило один раз і перевіряє вибірково.</span></li>
+        <li><i style="background:#7D3CE0"></i><span><b>Асистування</b>Інструмент готує чернетку, людина вичитує й доводить до придатного стану.</span></li>
+        <li><i style="background:#C7442E"></i><span><b>Аугментація</b>Рішення лишається за людиною, інструмент лише розширює те, що вона встигає охопити.</span></li>
+      </ul>
+      <ul class="ztasks" id="ztasks" style="grid-column:1/-1"></ul>
+    </div>
+
+    <p class="prov fact quote" data-prov="01-6-3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>«AI is excellent at managing data… It understands the how and what. Humans understand the why.»</p>
+
+    <div class="prov fact txt" data-prov="01-6-4"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h8l4.5 4.5v6"/><path d="M14 4.5V9h4.5"/><path d="M6 4.5v17h6"/><path d="M9 10h5M9 13.5h6M9 17h3"/><path d="M14.5 18.5l2.5 2.5 4.5-5"/></svg></span>
+      <p>Це Хуаніта Вудс, PMP, PgMP, на PMI Global Summit в Атланті. Там же — порівняння, яке пояснює потребу в нагляді краще за будь-яку методичку: інструмент із інтелектом савана і емоційним віком п’ятирічної дитини. Працювати з ним можна й потрібно, лишати без нагляду — ні.</p>
+      <p>Причина, чому людину з контуру не прибрати, у розборі сформульована коротко. Алгоритм не заперечить керівництву, не відстоїть етичну межу і не візьме на себе відповідальність за власний вибір. Менеджер усе це може — і саме тому проєкт із генеративним AI потребує людини в контурі, а не попри неї.</p>
+    </div>
+  </section>
+
+  <!-- ============ цифри ============ -->
+  <section class="sec">
+    <h2>Три цифри, які змінюють розмову.</h2>
+    <div class="prov del grid3 edge" data-prov="01-7-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h15"/><path d="M10 8V5.5h6V8"/><path d="M7.5 8l1 12.5h9L18.5 8"/><path d="M11 11.5v6M15 11.5v6"/></svg></span>
+      <div class="card"><div class="num">42%</div><p class="mut">часу менеджера йде на збір статусів, а не на рішення.</p></div>
+      <div class="card"><div class="num">2×</div><p class="mut">частіше переглядають план команди, що працюють двотижневими горизонтами.</p></div>
+      <div class="card"><div class="num">1 з 5</div><p class="mut">проєктів закривається достроково — не через успіх, а через зміну пріоритету.</p></div>
+    </div>
+    <div class="prov redo txt" data-prov="01-7-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <p>Цифри тут навмисно умовні: сторінка показує механіку поміток, а не результати дослідження. Саме тому блок стоїть під «переробити» — його треба або звести з джерелом по кожній цифрі, або зняти цілком. Лишити його як є не можна: три великі числа на сірих картках виглядають як факт, навіть коли поруч написано протилежне.</p>
+    </div>
+  </section>
+
+  <!-- ============ висновок ============ -->
+  <section class="sec">
+    <h2>Що з цього випливає.</h2>
+
+    <p class="prov redo quote" data-prov="01-8-1"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>Роль менеджера зсувається від того, хто збирає інформацію, до того, хто відповідає за якість рішення на її основі.</p>
+
+    <div class="prov redo txt" data-prov="01-8-2"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a8 8 0 1 1-2.6-5.9"/><path d="M21 4.5V9h-4.5"/></svg></span>
+      <p>Три розбори вище говорять про різне — ролі, структуру робіт, межу втручання, — але сходяться в одному місці. Скрізь, де з’являється агент, доводиться заздалегідь відповісти на питання, яке раніше вирішувалося по ходу: чиє це рішення. У матриці ролей це один Accountable, у структурі робіт — записані межі й точки затвердження, у полі складності — вибір режиму. Три різні механізми для однієї речі.</p>
+      <p>Інструмент дешевшає, а відповідальність — ні. Чим більше рутини забирає автоматика, тим дорожче коштує кожне судження, яке лишилося за людиною, і тим гірше видно момент, коли судження підмінили результатом роботи інструмента. Помітки на цій сторінці — спроба зробити цей момент видимим хоча б у тексті: рейка зліва каже, звідки взято кожен блок, і не дає видати чужий факт за власний висновок або власний здогад за перевірене.</p>
+    </div>
+
+    <div class="prov todo note" data-prov="01-8-3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 4.8l3.7 3.7L9.6 20.2l-4.6.9.9-4.6z"/><path d="M15.2 7.1l3.7 3.7"/></svg></span>
+      <span class="tg">Що тут ще робити</span>
+      <p>Розділ про бюджетування не написаний зовсім. Блок із цифрами тримається на вигаданих значеннях і має бути або підтверджений, або знесений. Стадії зрілості й радар — власна конструкція, а не чиясь методика, і поки що стоять як гіпотези.</p>
+    </div>
+  </section>
+
+  <!-- ============ джерела ============ -->
+  <section class="sec sources">
+    <h2>Джерела</h2>
+    <ol class="srclist">
+      <li id="src-1"><a href="https://www.pmi.org/blog/stakeholder-management-raci" target="_blank" rel="noopener">Stakeholder Management and RACI: Who Does What, and Who Answers for It</a><span>Project Management Institute, 29 липня 2026</span></li>
+      <li id="src-2"><a href="https://www.pmi.org/blog/work-breakdown-structure" target="_blank" rel="noopener">Work Breakdown Structure: Define the Work Before You Build It</a><span>Project Management Institute, 18 серпня 2026</span></li>
+      <li id="src-3"><a href="https://www.pmi.org/blog/human-in-the-loop-what-project-managers-need-to-know" target="_blank" rel="noopener">Human-in-the-Loop: What Project Managers Need to Know</a><span>Project Management Institute; спирається на дослідження «Shaping the Future of Project Management with AI»</span></li>
+    </ol>
+    <p class="mut" style="font-size:15px">Номер біля заголовка розділу вказує, з якого джерела взято його зміст. Блоки без номера джерела не мають — і позначені відповідно.</p>
+  </section>
+
+</div>
+
+<script>
+var REDUCED = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ============ 1. радар ============ */
+var TRENDS = [
+  {id:'ai',   x:-0.55, y:0.80, t:'AI в плануванні', cat:'Інструменти', w:5, when:'вже зараз',
+   act:'Перевіряти логіку перебудованого плану, а не набирати сітку',
+   d:'Асистент більше не підказує формулювання, а перебудовує план: перерозподіляє задачі, коли зсувається одна дата. Менеджер перевіряє логіку, а не набирає сітку.'},
+  {id:'out',  x:0.62, y:0.52, t:'Оплата за результат', cat:'Контракти', w:4, when:'рік-два',
+   act:'Переписати оцінку так, щоб її можна було захищати як зобов’язання',
+   d:'Замовник платить за досягнутий показник, а не за витрачені години. Оцінка перестає бути прогнозом і стає зобов’язанням.'},
+  {id:'hyb',  x:-0.8, y:-0.18, t:'Гібридні команди', cat:'Люди', w:3, when:'вже зараз',
+   act:'Зняти залежність процесу від синхронної наради',
+   d:'Половина команди в офісі, половина в іншому часовому поясі, частина — підрядники на два місяці. Синхронна нарада перестає бути опорою процесу.'},
+  {id:'data', x:-0.12, y:0.30, t:'Дані замість статусів', cat:'Процес', w:4, when:'вже зараз',
+   act:'Збирати статус із системи, нараду лишити для розбіжностей',
+   d:'Статус збирається з системи, а не зі слів на дейлі. Нарада лишається для розбіжностей, а не для звіту.'},
+  {id:'sust', x:0.4, y:-0.68, t:'Сталість як вимога', cat:'Регуляція', w:2, when:'далі',
+   act:'Завести показник у ту саму звітність, що бюджет і строк',
+   d:'Вуглецевий і соціальний слід проєкту потрапляє в ті самі звіти, що бюджет і строк. Поки що як обов’язок, не як важіль.'},
+  {id:'skill',x:0.7, y:-0.05, t:'Навички замість ролей', cat:'Люди', w:3, when:'рік-два',
+   act:'Описувати склад команди навичками, а не посадами',
+   d:'Склад команди збирається під задачу з набору навичок, а не з посад. Штатний розклад перестає описувати реальність.'}
+];
+var CATS = ['Усі','Інструменти','Люди','Процес','Контракти','Регуляція'];
+var dots = document.getElementById('dots'), rp = document.getElementById('rpanel');
+  var rcats = document.getElementById('rcats');
+var NS = 'http://www.w3.org/2000/svg', curCat = 'Усі', curId = 'ai';
+
+TRENDS.forEach(function (t) {
+  var cx = 210 + t.x * 170, cy = 210 - t.y * 170;
+  t.cx = cx; t.cy = cy;
+  var g = document.createElementNS(NS, 'g');
+  g.setAttribute('class', 'dot'); g.dataset.id = t.id;
+  g.innerHTML = '<circle class="halo" cx="' + cx + '" cy="' + cy + '" r="14"/>'
+              + '<circle class="hit" cx="' + cx + '" cy="' + cy + '" r="26"/>'
+              + '<circle class="pt" cx="' + cx + '" cy="' + cy + '" r="7"/>'
+              + '<text x="' + cx + '" y="' + (cy + (t.y > 0 ? -22 : 30)) + '">' + t.t + '</text>'
+              + '<text class="sub" x="' + cx + '" y="' + (cy + (t.y > 0 ? -8 : 44)) + '">' + t.cat.toLowerCase() + ' · ' + t.when + '</text>';
+  g.addEventListener('click', function () { pick(t.id); });
+  dots.appendChild(g);
+});
+
+CATS.forEach(function (c) {
+  var b = document.createElement('button');
+  b.textContent = c;
+  b.addEventListener('click', function () { filter(c); });
+  rcats.appendChild(b);
+});
+
+function filter(c) {
+  curCat = c;
+  Array.prototype.forEach.call(rcats.children, function (b) {
+    b.classList.toggle('on', b.textContent === c);
+  });
+  document.querySelectorAll('.radar .dot').forEach(function (g) {
+    var t = byId(g.dataset.id);
+    g.classList.toggle('dim', c !== 'Усі' && t.cat !== c);
+  });
+  // если выбранная точка отфильтрована — панель переезжает на первую видимую
+  var cur = byId(curId);
+  if (c !== 'Усі' && cur.cat !== c) {
+    var first = TRENDS.filter(function (t) { return t.cat === c; })[0];
+    if (first) pick(first.id);
+  }
+}
+
+function byId(id) { return TRENDS.filter(function (t) { return t.id === id; })[0]; }
+
+function pick(id) {
+  var t = byId(id); curId = id;
+  document.querySelectorAll('.radar .dot').forEach(function (g) {
+    g.classList.toggle('on', g.dataset.id === id);
+  });
+  var m = ''; for (var i = 0; i < 5; i++) m += '<i class="' + (i < t.w ? 'f' : '') + '"></i>';
+  rp.className = 'rpanel'; void rp.offsetWidth; rp.className = 'rpanel sw';
+  rp.innerHTML = '<span class="tg">' + t.cat + '</span><h3>' + t.t + '</h3>'
+    + '<p class="mut">' + t.d + '</p>'
+    + '<div class="meter">' + m + '</div>'
+    + '<div class="rmeta"><span>Тиск на роль<b>' + t.w + ' з 5</b></span>'
+    + '<span>Горизонт<b>' + t.when + '</b></span></div>'
+    + '<p class="mut" style="font-size:14px;margin-top:12px"><b style="color:var(--ink-1)">Що робити:</b> ' + t.act + '</p>';
+}
+filter('Усі'); pick('ai');
+
+/* Точки проявляются, когда схема доехала до экрана, — иначе анимацию никто не увидит.
+   Скрытые точки — это пустая схема, поэтому у показа есть и второй путь: обычный
+   скролл. Если наблюдатель не сработал, схема всё равно наполнится. */
+var dotsDone = false;
+function revealDots() {
+  if (dotsDone) return;
+  dotsDone = true;
+  document.querySelectorAll('.radar .dot').forEach(function (g, i) {
+    setTimeout(function () { g.classList.add('shown'); }, REDUCED ? 0 : i * 70);
+  });
+}
+window.addEventListener('scroll', function onScroll() {
+  var r = document.querySelector('.radar').getBoundingClientRect();
+  if (r.top < innerHeight * 0.9) { revealDots(); window.removeEventListener('scroll', onScroll); }
+}, { passive: true });
+
+/* ============ 2. стадії ============ */
+var STAGES = [
+  {c:'Спроби', h:'Хтось у команді пробує.', share:15,
+   signs:['Інструмент з’являється знизу, не з рішення керівництва','Результат неможливо порівняти: у кожного свій підхід','Питання «чи працює» ще не має відповіді'],
+   pm:['Не заважати й дивитися, що приживається','Зафіксувати, звідки взялася економія часу'],
+   metric:'Що вимірюють: кількість інструментів. Пастка: пілот заради пілота.'},
+  {c:'Опора', h:'Рутина йде в автоматику.', share:45,
+   signs:['Протоколи, статуси, чернетки листів — не руками','Час звільнився, але в план це ще не потрапило','Тут застрягає більшість команд'],
+   pm:['Знайти, куди подівся звільнений час','Перестати вважати впровадження завершеним'],
+   metric:'Що вимірюють: час на рутину. Пастка: економія не доходить до плану.'},
+  {c:'Процес', h:'Оцінка спирається на історію.', share:28,
+   signs:['Строки рахуються по завершених проєктах, не по відчуттю','З’являється звичка перевіряти цифру, а не приймати','Змінюється сама форма наради'],
+   pm:['Завести звірку оцінки з фактом як обов’язковий крок','Тримати нараду для розбіжностей, не для звіту'],
+   metric:'Що вимірюють: точність оцінок. Пастка: довіра до цифри без перевірки.'},
+  {c:'Норма', h:'Без цього вже не працюють.', share:12,
+   signs:['Передбачуваність постачання стає головним показником','Ризик зміщується: команда втрачає навичку без інструмента','Роль менеджера — якість рішення, не збір даних'],
+   pm:['Тримати запасний ручний шлях для критичних кроків','Стежити, щоб судження не підмінялося результатом інструмента'],
+   metric:'Що вимірюють: передбачуваність постачання. Пастка: втрата навички без інструмента.'}
+];
+var steps = document.getElementById('steps'), sp = document.getElementById('spanel'), st = document.getElementById('stage');
+STAGES.forEach(function (s, i) {
+  var b = document.createElement('button');
+  b.innerHTML = '<span class="knob"></span><span class="cap">' + s.c + '</span>';
+  b.addEventListener('click', function () { go(i); });
+  steps.appendChild(b);
+});
+function go(i) {
+  var s = STAGES[i];
+  st.style.setProperty('--pos', i);
+  Array.prototype.forEach.call(steps.children, function (b, j) { b.classList.toggle('on', j <= i); });
+  sp.style.animation = 'none'; void sp.offsetWidth; sp.style.animation = '';
+  sp.innerHTML = '<p class="lead">' + s.h + '</p>'
+    + '<div class="cols"><div><h4>Ознаки</h4><ul>' + s.signs.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div>'
+    + '<div><h4>Що робить менеджер</h4><ul>' + s.pm.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul></div></div>'
+    + '<p class="metric">' + s.metric + '</p>'
+    + '<p class="metric">Приблизна частка команд на цій стадії <span class="bar2"><i></i></span></p>';
+  var bar = sp.querySelector('.bar2 i');
+  setTimeout(function () { bar.style.width = s.share + '%'; }, 40);
+}
+go(1);
+
+/* ============ 3. WBS ============ */
+var BASE = [
+  ['1','Вимоги і дизайн','',['Збір вимог','Проєктування рішення']],
+  ['2','Розробка','',['Інтеграція з тікетами','Логіка відповіді']],
+  ['3','Тестування','',['Функційні перевірки','Навантаження']],
+  ['4','Впровадження','',[]],
+  ['5','Управління проєктом','',[]]
+];
+var EXTRA = [
+  ['6','Межі задачі','Прямо записано, що агент робить і чого не робить.',['Перелік дозволених дій','Перелік заборонених']],
+  ['7','Дизайн агента','Роль та інструкції, підключені інструменти, робота з контекстом.',['Інструкції та роль','Доступ до знань']],
+  ['8','Запобіжники і затвердження','Що агент може сам, а де потрібна людина, щоб натиснути.',['Ліміти на дію','Точки затвердження']],
+  ['9','Ескалація і запасний шлях','Що відбувається на низькій упевненості або крайньому випадку.',['Поріг упевненості','Передача людині']],
+  ['10','Нагляд і оцінка','Перевірка результату, журнал, повторні звірки з часом.',['Валідація виходу','Журнал і аудит']]
+];
+var wsw = document.getElementById('wbsSw'), wtree = document.getElementById('wbsTree');
+var wrule = document.getElementById('wbsRule'), wcnt = document.getElementById('wbsCnt');
+var mode = 1, open = {};
+
+function wbs(i) {
+  mode = i;
+  Array.prototype.forEach.call(wsw.children, function (b, j) { b.classList.toggle('on', j === i); });
+  var rows = i ? BASE.concat(EXTRA) : BASE;
+  var kids = rows.reduce(function (n, r) { return n + r[3].length; }, 0);
+  wcnt.innerHTML = 'Гілок верхнього рівня: <b>' + rows.length + '</b> · робочих пакетів нижче: <b>' + kids + '</b>';
+  wtree.innerHTML = rows.map(function (r, n) {
+    var add = n >= BASE.length;
+    var o = open[r[0]];
+    var html = '<div class="row head' + (add ? ' add' : '') + (o ? ' open' : '') + '" data-k="' + r[0] + '"'
+      + ' style="animation-delay:' + ((n - BASE.length) * 45) + 'ms">'
+      + '<span class="k">' + r[0] + '</span><span><b>' + r[1] + '</b>'
+      + (add ? '<span class="bd">агент</span>' : '')
+      + (r[2] ? '<span class="d">' + r[2] + '</span>' : '') + '</span>'
+      + (r[3].length ? '<span class="tw">▶</span>' : '') + '</div>';
+    if (o) html += r[3].map(function (c, ci) {
+      return '<div class="row lvl2"><span class="k">' + r[0] + '.' + (ci + 1) + '</span><span>' + c + '</span></div>';
+    }).join('');
+    return html;
+  }).join('');
+  wtree.querySelectorAll('.row.head').forEach(function (row) {
+    row.addEventListener('click', function () {
+      var k = row.dataset.k;
+      open[k] = !open[k];
+      wbs(mode);
+    });
+  });
+  wrule.textContent = i
+    ? 'П’ять гілок додає не сама технологія, а делегована їй свобода дій: усе, що агент вирішує без людини, треба описати як роботу. Клік по гілці розкриває робочі пакети.'
+    : 'Той самий помічник, зібраний як звичайна функція продукту: структура очікувана і нічого не додає.';
+}
+Array.prototype.forEach.call(wsw.children, function (b) {
+  b.addEventListener('click', function () { open = {}; wbs(+b.dataset.i); });
+});
+wbs(1);
+
+/* ============ 4. поле «складність × втручання» ============ */
+var ZONES = {
+  auto: ['Розсилка нагадувань про прострочені задачі','Зведення витрат за категоріями','Перенос дат за фіксованим правилом'],
+  assist: ['Чернетка протоколу наради','Перший підхід до структури робіт','Зведення відгуків у теми'],
+  augment: ['Рішення про перенос віхи','Розмова з незадоволеним замовником','Вибір, що прибрати з обсягу']
+};
+var ZKEYS = ['auto','assist','augment'];
+var zt = document.getElementById('ztasks');
+var zrects = document.querySelectorAll('.hitl .zn');
+var zlis = document.querySelectorAll('.zdesc li');
+function zone(i) {
+  zrects.forEach(function (r, j) { r.classList.toggle('on', j === i); r.classList.toggle('off', j !== i); });
+  zlis.forEach(function (l, j) { l.classList.toggle('on', j === i); });
+  zt.style.animation = 'none'; void zt.offsetWidth; zt.style.animation = 'fade .3s ease';
+  zt.innerHTML = ZONES[ZKEYS[i]].map(function (t) { return '<li>' + t + '</li>'; }).join('');
+}
+zrects.forEach(function (r, i) { r.addEventListener('click', function () { zone(i); }); });
+zlis.forEach(function (l, i) { l.addEventListener('click', function () { zone(i); }); });
+zone(1);
+
+/* ============ 5. появление блоков и счёт цифр ============ */
+(function () {
+  var targets = document.querySelectorAll('.sec > *, .howto, .provleg, h1, .lead');
+  if (!('IntersectionObserver' in window) || REDUCED) return;
+  targets.forEach(function (el) { el.classList.add('rv'); });
+  var seen = 0;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      seen++;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+      if (e.target.querySelector && e.target.querySelector('.radar')) revealDots();
+      if (e.target.classList.contains('radar')) revealDots();
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  targets.forEach(function (el) { io.observe(el); });
+
+  /* Появление — украшение, и оно не имеет права скрыть текст. Если наблюдатель
+     почему-то не сработал, через секунду показываем всё как есть. */
+  setTimeout(function () {
+    if (seen) return;
+    io.disconnect();
+    targets.forEach(function (el) { el.classList.add('in'); });
+    revealDots();
+  }, 1000);
+})();
+if (REDUCED) revealDots();
+
+(function () {
+  var nums = document.querySelectorAll('.num');
+  if (!nums.length || !('IntersectionObserver' in window) || REDUCED) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, txt = el.textContent, m = txt.match(/[\d.]+/);
+      if (!m) return;
+      var end = parseFloat(m[0]), t0 = performance.now();
+      (function step(now) {
+        var k = Math.min(1, (now - t0) / 900);
+        var v = end * (1 - Math.pow(1 - k, 3));
+        el.textContent = txt.replace(m[0], end % 1 ? v.toFixed(1) : Math.round(v));
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(function (n) { io.observe(n); });
+})();
+</script>
+<script src="assets/prov-edit.js"></script>
+<script src="assets/comment-edit.js"></script>
+</body>
+</html>

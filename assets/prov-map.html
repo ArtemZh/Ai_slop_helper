@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пульт пометок</title>
+<link rel="stylesheet" href="prov.css">
+<style>
+  body{background:var(--ground)}
+  .head{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(0,0,0,.06);padding:14px 26px}
+  :root[data-theme="dark"] .head{background:rgba(24,24,28,.72)}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .head{background:rgba(24,24,28,.72)}}
+  .head .row{display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;max-width:1220px;margin:0 auto}
+  .head h1{font-size:17px;font-weight:600;margin:0;letter-spacing:-.01em}
+  .counts{display:flex;gap:14px;font-size:13px;color:var(--ink-3);font-family:"JetBrains Mono",monospace}
+  .counts b{color:var(--ink);font-weight:600}
+  select{font:inherit;font-size:14px;padding:6px 10px;border-radius:var(--r-sm);
+         border:1px solid rgba(0,0,0,.12);background:var(--paper);color:var(--ink)}
+  .body{max-width:1220px;margin:0 auto;padding:var(--space-lg) 26px var(--space-3xl)}
+  .sec{font-size:12px;font-family:"JetBrains Mono",monospace;color:var(--ink-3);
+       margin:var(--space-lg) 0 var(--space-xs);text-transform:none}
+  .mod{font-size:22px;font-weight:600;margin:var(--space-2xl) 0 var(--space-sm);letter-spacing:-.02em}
+  .row2{display:grid;grid-template-columns:1fr auto;gap:var(--space-md);align-items:start;
+        padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+  .txt{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+  .txt .id{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-3);margin-right:8px}
+  .txt .kind{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-3);margin-left:8px}
+  .btns{display:flex;gap:6px}
+  .btns button{font:inherit;font-size:12.5px;padding:6px 11px;border-radius:var(--r-sm);cursor:pointer;
+    border:1px solid rgba(0,0,0,.12);background:var(--paper);color:var(--ink-3);white-space:nowrap}
+  .btns button[aria-pressed="true"]{color:#fff;border-color:transparent}
+  .btns button[data-t="fact"][aria-pressed="true"]{background:#4A4A55}
+  .btns button[data-t="hyp"][aria-pressed="true"]{background:#82828C}
+  .btns button[data-t="mine"][aria-pressed="true"]{background:#C97B4A}
+  .btns button[data-t="todo"][aria-pressed="true"]{background:var(--amber)}
+  .btns button[data-t="redo"][aria-pressed="true"]{background:var(--signal-ink)}
+  .btns button[data-t="del"][aria-pressed="true"]{background:var(--ink-3)}
+  .btns button:disabled{opacity:.5;cursor:progress}
+  .err{color:var(--signal-ink);font-size:13px;margin-left:8px}
+  a.open{font-size:12.5px;color:var(--amber);text-decoration:none;margin-left:8px}
+</style></head>
+<body>
+<div class="head"><div class="row">
+  <h1>Пульт пометок</h1>
+  <div class="counts" id="counts"></div>
+  <select id="filter"><option value="">все модули</option></select>
+  <span class="err" id="err"></span>
+</div></div>
+
+<div class="body" id="list">Загрузка…</div>
+
+<script>
+const TYPES=[['fact','проверено'],['hyp','гипотеза'],['mine','мой вывод'],['todo','доработать'],['redo','переробити · ai slop'],['del','удалить']];
+let MAP={};
+
+function counts(){
+  const c={fact:0,hyp:0,mine:0,todo:0,redo:0,del:0};
+  for (const k in MAP) c[MAP[k].type]++;
+  document.getElementById('counts').innerHTML =
+    TYPES.map(([t,n])=>`${n} <b>${c[t]}</b>`).join(' · ');
+}
+
+function render(){
+  const only=document.getElementById('filter').value;
+  const ids=Object.keys(MAP).filter(id=>!only||MAP[id].module===only)
+    .sort((a,b)=>a.split('-').map(Number).reduce((x,y,i)=>x||y-b.split('-').map(Number)[i],0));
+  let html='', mod='', sec='';
+  for (const id of ids){
+    const r=MAP[id];
+    if (r.module!==mod){ mod=r.module; sec='';
+      html+=`<div class="mod">Модуль ${mod} <a class="open" href="${r.file}" target="_blank">открыть страницу ↗</a></div>`; }
+    if (r.section!==sec){ sec=r.section; html+=`<div class="sec">${sec}</div>`; }
+    html+=`<div class="row2"><div class="txt"><span class="id">${id}</span>${r.text}<span class="kind">${r.block}</span></div>`
+        + `<div class="btns" data-id="${id}">`
+        + TYPES.map(([t,n])=>`<button data-t="${t}" aria-pressed="${r.type===t}">${n}</button>`).join('')
+        + `</div></div>`;
+  }
+  document.getElementById('list').innerHTML=html;
+  counts();
+}
+
+document.addEventListener('click', async e=>{
+  const b=e.target.closest('.btns button'); if(!b) return;
+  const id=b.parentElement.dataset.id, type=b.dataset.t;
+  if (MAP[id].type===type) return;
+  [...b.parentElement.children].forEach(x=>x.disabled=true);
+  try{
+    const res=await fetch('/api/prov',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id,type})});
+    const j=await res.json();
+    if (j.error) throw new Error(j.error);
+    MAP[id].type=j.type;
+    [...b.parentElement.children].forEach(x=>x.setAttribute('aria-pressed', x.dataset.t===j.type));
+    document.getElementById('err').textContent='';
+    counts();
+  }catch(err){
+    document.getElementById('err').textContent='не сохранилось: '+err.message+' — запущен ли prov_server.py?';
+  }finally{
+    [...b.parentElement.children].forEach(x=>x.disabled=false);
+  }
+});
+
+document.getElementById('filter').addEventListener('change', render);
+
+fetch('/api/prov').then(r=>r.json()).then(m=>{
+  MAP=m;
+  const mods=[...new Set(Object.values(m).map(r=>r.module))].sort();
+  document.getElementById('filter').insertAdjacentHTML('beforeend',
+    mods.map(x=>`<option value="${x}">модуль ${x}</option>`).join(''));
+  render();
+}).catch(()=>{
+  document.getElementById('list').innerHTML =
+   '<p>Карта не загрузилась. Пульт работает только на записывающем сервере:<br>'+
+   '<code>python3 prov_server.py</code> из папки проекта, потом <code>127.0.0.1:8742/prov-map.html</code></p>';
+});
+</script>
+</body></html>
